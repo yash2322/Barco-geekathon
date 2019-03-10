@@ -1,0 +1,105 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="login.css">
+    <link href="https://fonts.googleapis.com/css?family=Asap" rel="stylesheet">
+    <title>Document</title>
+	<link rel="stylesheet" href="loss.css">
+</head>
+<body style="background-color:#093145">
+
+<div id="container">
+
+<h1 style="text-align:center;padding:2% 0%;color:white;font-family:raleway">FIRST INFORMATION REPORT</h1>
+
+  <span class="input">
+    <input type="text" class="input__field" id="input-1" />
+    <label for="input-1" class="input__label">
+      <span class="input__label-content">First Name</span>
+  </label>
+  </span>
+
+  <span class="input">
+    <input type="text" class="input__field" id="input-2" />
+    <label for="input-2" class="input__label">
+      <span class="input__label-content">Last Name</span>
+    </label>
+  </span>
+
+  <span class="input">
+    <input type="text" class="input__field" id="input-3" />
+    <label for="input-3" class="input__label">
+      <span class="input__label-content">Phone Number</span>
+    </label>
+  </span>
+
+  <span class="input">
+    <input type="text" class="input__field" id="input-4" />
+    <label for="input-4" class="input__label">
+      <span class="input__label-content">Aadhaar Number</span>
+    </label>
+  </span>
+<span class="input">
+    <input type="text" class="input__field" id="input-5" />
+    <label for="input-5" class="input__label">
+      <span class="input__label-content">Vehicle registration number</span>
+    </label>
+  </span>
+  <span class="input">
+    <input type="text" class="input__field" id="input-6" />
+    <label for="input-6" class="input__label">
+      <span class="input__label-content">Email Address</span>
+    </label>
+  </span>
+
+
+  <span class="input message">
+    <textarea class="input__field" id="input-7"></textarea>
+    <label for="input-7" class="input__label">
+      <span class="input__label-content">Message</span>
+    </label>
+  </span>
+
+  <button id="send-button" type="button">Send</button>
+
+</div>
+<script>
+var $input;
+
+function onInputFocus(event) {
+  var $target = $(event.target);
+  var $parent = $target.parent();
+  $parent.addClass('input--filled');
+};
+
+function onInputBlur(event) {
+  var $target = $(event.target);
+  var $parent = $target.parent();
+
+  if (event.target.value.trim() === '') {
+    $parent.removeClass('input--filled');
+  }
+};
+
+$(document).ready(function() {
+  $input = $('.input__field');
+  
+  // in case there is any value already
+  $input.each(function(){
+    if ($input.val().trim() !== '') {
+      var $parent = $input.parent();
+      $parent.addClass('input--filled');
+    }
+  });
+  
+  $input.on('focus', onInputFocus);
+  $input.on('blur', onInputBlur);
+});
+
+
+</script>
+
+</body></html>

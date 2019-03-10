@@ -1,0 +1,408 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+        crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Asap:700|Bree+Serif|Josefin+Sans|Open+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" media="screen" href="./hero.css">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <meta name="theme-color" content="#717171">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+
+</head>
+
+<body>
+
+    <div class="par">
+        <div class="resmenu">
+            <div onclick="showbar() " class="crossdiv">
+                <i class="fas fa-times cross"></i>
+            </div>
+            <ul style="height:100%; display:flex;flex-direction:column;align-items:center;justify-items:center;align-content:center;justify-content:center;">
+                <li onclick="showbar()"><a id="#ct1" style="cursor: pointer;" onclick="sto(this)">About Us</a></li>
+                <li onclick="showbar()"><a id="#ct2" style="cursor: pointer;" onclick="sto(this)">Mobile APP</a></li>
+                <li><a href="login.html" style="text-decoration: none;;color:#F0F0EA">Sign Up</a></li>
+                <li><a href="login.html" style="text-decoration: none;color:#F0F0EA">Login</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!--Nav Bar-->
+    <div class="hwrap">
+        <header class="flex-container">
+            <div class="left">
+                <img src="asset/mlock.png" alt="">
+            </div>
+            <div class="right">
+                <div class="links">
+                    <ul>
+                        <li><a id="#ct1" style="cursor: pointer;" onclick="sto(this)">About Us</a></li>
+                        <li><a id="#ct2" style="cursor: pointer;" onclick="sto(this)">Mobile APP</a></li>
+                        <a href="login.html" style="text-decoration: none">
+                            <button>Sign In</button>
+                        </a>
+                        <a href="login.html" style="text-decoration: none"><button>Register</button>
+                        </a>
+                    </ul>
+                </div>
+                <div class="buttonres" onclick="showbar();">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+
+            </div>
+        </header>
+    </div>
+
+    <!--Social Website Link side column-->
+    <div class="shareBox">
+
+        <i class="fab fa-facebook-f f"></i>
+        <i class="fab fa-twitter t"></i>
+        <i class="fab fa-google-plus-g g"></i>
+        <i class="fab fa-pinterest p"></i>
+        <i class="fab fa-linkedin-in l"></i>
+
+    </div>
+    <!--Heading Name of the Product-->
+    <div class="wrapper">
+        <div class="banner">
+            <div class="name">
+                <h1 class="bannerhead">Smart Traffic</h1>
+                <p class="bannerparagraph">Control Accident </p>
+                <p class="bannerparagraph">Make way to emergency vehicle</p>
+            </div>
+            <div class="entry">
+                <a href="loss.html"><button>FILE LOST REPORT</button></a>
+            </div>
+        </div>
+    </div>
+    <div style="text-align: center;padding-bottom: 2%"><canvas style="margin: 2% auto;box-shadow: 2px 2px 5px black" id="myChart" width="150%" height="25%"></canvas>Number of deaths dues to accidents</div>
+    <div style="display: flex;
+		justify-content: center;
+                flex-direction: row;"><div style="height: 60%;width: 80%;text-align: center"><canvas style="margin: 2% 0;box-shadow: 2px 2px 5px black;height: 100px;width: 300px" id="myChart2"></canvas>Type Of vehicles Involved</div>
+    <div style="width: 80%;height: 60%;text-align: center"><canvas style="margin: 2% 0;box-shadow: 2px 2px 5px black;height: 100px;width: 300px" id="myChart3"></canvas>Type Of vehicles Involved</div></div>
+<div style="display: flex;
+		justify-content: center;
+		flex-direction: row;
+		align-items: center;margin-bottom: 2%;background-color: white;font-size: 1.8em;"><input style="width: 10%;padding: 1% 0%;border-radius: 4%;"  type="button" value="2017" onclick="adddata2();adddatapie1()"><input style="width: 10%;padding: 1% 0%;border-radius: 4%;"  type="button" value="2016" onclick="adddata();adddatapie()"></div>
+
+    <!--Description of the product-->
+
+
+    <div class="passmeindetails" id="ct1">
+        <div class="heading">
+            <h2>Too many street unhappenings?</h2>
+            <p>Smart Traffic makes you able to see the accident trend in the country.</p>
+        </div>
+        <div class="content">
+            <div class="row">
+                <div class="box1">
+                
+                    <h2>Emergency Vehicle</h2>
+                    <hr style="width:100%; color:#717171;" class="power1">
+                    <div class = "img-container">
+                            <img src="assets/img/pic7.svg" alt="Icon">
+                        </div>
+                    <p>
+                        By recognizing vehicle number plate using ALPR (Automatic License Plate Recognition) API and extracting vehicle number from the number plate, we will able to detect ambulance on the road(by quiring the number in the database of ambulance in the city) .
+                    </p>
+                </div>
+                <div class="box1">
+                    <h2>Stolen Car</h2>
+                    <hr style="width:100%; color:#717171;" class="power1">
+                    <div class = "img-container">
+                            <img src="assets/img/pic5.svg" alt="Icon">
+                        </div>
+                    <p>
+                        Owner of stolen car will FIR about the car and put the vehicle number in our portal. 
+In stolen car data base this new data will be added and after extracting vehicle number through ALPR API and OCR API system will detect the vehicle on the street.
+If it is so then traffic police will take charge to catch the thief. 
+
+                    </p>
+                </div>
+                <div class="box1">
+                    <h2>Accident Trend Analysis</h2>
+                    <hr style="width:100%; color:#717171;" class="power1">
+                    <div class = "img-container">
+                            <img src="assets/img/pic1.svg" alt="Icon">
+                        </div>
+                    <p>
+                    We have collected and visualized the trend of accident in India. Users can view and analyse the data. It will be helpful for decision making and E-Governance in road accident.
+                    </p>
+                </div>
+            </div>
+            
+        </div>
+        
+
+        <div class="footer">
+            <hr style="width:80%; margin:0 auto; color:rgba(112, 112, 112,0.9); margin-bottom: 2%;">
+            <h2>With ability to check your passwords without remembering anything in no time, PassMeIn was desgined
+                keeping you
+                and your privacy in our mind.</h2>
+        </div>
+    </div>
+    <div class="availaibleOn" id="ct2">
+        <h2>Get Smart Traffic today</h2>
+        <p>Availaible On</p>
+        <div class="downloadContainer">
+            <button class="DownloadButton">PLAYSTORE</button>
+            <button class="DownloadButton">WINDOWS</button>
+            <button class="DownloadButton">APP&nbspSTORE</button>
+        </div>
+    </div>
+
+    <!--Comapny Contact Details-->
+
+    <div class="foot">
+        <div class="copyright">
+
+            <div class="boxFooter">
+                <h1>Contact Us</h1>
+                <hr class="power">
+                <div class="contactUslist">
+                    <ul>
+                        <li>
+                            <a href=""><i class="fa fa-facebook-square" aria-hidden="true"></i>Facebook</a>
+                        </li>
+                        <li>
+                            <a href=""><i class="fa fa-twitter-square" aria-hidden="true"></i>twitter</a>
+                        </li>
+                        <li>
+                            <a href=""><i class="fa fa-linkedin-square" aria-hidden="true"></i>linkedin</a>
+                        </li>
+                        <li>
+                            <a href=""><i class="fa fa-pinterest-square" aria-hidden="true"></i>Pinterest</a>
+                        </li>
+                        <li>
+                            <a href=""><i class="fa fa-phone-square" aria-hidden="true"></i>+91-9414131414</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!--Address-->
+
+            <div class="boxFooter">
+                <h1>Reach Us</h1>
+                <hr class="power">
+                <div class="contactUslist">
+                    <p>Phagwara, 144401<br> Punjab LPU</p>
+                </div>
+            </div>
+            <div class="boxFooter">
+                <h1>Smart Traffic</h1>
+                <hr class="power">
+                <div class="contactUslist">
+                    <ul>
+                        <li>
+                            <a href=""><i class="fa fa-android" aria-hidden="true"></i>Android</a>
+                        </li>
+                        <li>
+                            <a href=""><i class="fa fa-windows" aria-hidden="true"></i></i>Windows</a>
+                        </li>
+                        <li>
+                            <a href=""><i class="fa fa-apple" aria-hidden="true"></i>Apple</a>
+                        </li>
+                        <li>
+                            <a href=""><i class="fa fa-linux" aria-hidden="true"></i>linux</a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+        <!--Copyright-->
+
+        <hr class="last">
+        <div class="lastcopyright">
+            
+            <p>Copyright <i class="fa fa-copyright" aria-hidden="true"></i> 2019 | <br class="power">Smart Traffic, Inc. All
+                rights reserved
+            </p>
+        </div>
+    </div>
+
+<script>
+var canvas = document.getElementById('myChart');
+var data = {
+    labels: ["January", "February", "March", "April", "May", "June", "July"],
+    datasets: [
+        {
+            label: " MAJOR ACCIDENTS IN 2018",
+            fill: false,
+            lineTension: 0.1,
+            backgroundColor: "rgba(75,192,192,0.4)",
+            borderColor: "rgba(75,192,192,1)",
+            borderCapStyle: 'butt',
+            borderDash: [],
+            borderDashOffset: 0.0,
+            borderJoinStyle: 'miter',
+            pointBorderColor: "rgba(75,192,192,1)",
+            pointBackgroundColor: "#fff",
+            pointBorderWidth: 1,
+            pointHoverRadius: 5,
+            pointHoverBackgroundColor: "rgba(75,192,192,1)",
+            pointHoverBorderColor: "rgba(220,220,220,1)",
+            pointHoverBorderWidth: 2,
+            pointRadius: 5,
+            pointHitRadius: 10,
+            data: [65, 59, 80, 0, 56, 55, 40],
+        }
+    ]
+};
+
+function adddata(){
+    
+    myLineChart.data.datasets[0].data[0] = 90;
+    myLineChart.data.datasets[0].data[1] = 56;
+    myLineChart.data.datasets[0].data[2] = 78;
+    myLineChart.data.datasets[0].data[3] = 25;
+    myLineChart.data.datasets[0].data[4] = 45;
+    myLineChart.data.datasets[0].data[5] = 65;
+    myLineChart.data.datasets[0].data[6] = 55;
+    
+	myLineChart.data.datasets[0].data[7] = 55;
+    myLineChart.data.datasets[0].data[8] = 35;
+    myLineChart.data.datasets[0].data[9] = 62;
+    myLineChart.data.datasets[0].data[10] = 78;
+    myLineChart.data.label="2017";
+  myLineChart.data.labels[7] = "august";
+     myLineChart.data.labels[8] = "September";
+     myLineChart.data.labels[9] = "october";
+     myLineChart.data.labels[10] = "november";
+  myLineChart.update();
+   
+}
+    function adddata2(){
+    myLineChart.data.datasets[0].data[0] = 65;
+    myLineChart.data.datasets[0].data[1] = 76;
+    myLineChart.data.datasets[0].data[2] = 25;
+    myLineChart.data.datasets[0].data[3] = 32;
+    myLineChart.data.datasets[0].data[4] = 69;
+    myLineChart.data.datasets[0].data[5] = 48;
+    myLineChart.data.datasets[0].data[6] = 41;
+    
+	myLineChart.data.datasets[0].data[7] = 36;
+    myLineChart.data.datasets[0].data[8] = 95;
+    myLineChart.data.datasets[0].data[9] = 47;
+    myLineChart.data.datasets[0].data[10] = 87;
+    myLineChart.data.label="2017";
+  myLineChart.data.labels[7] = "august";
+     myLineChart.data.labels[8] = "September";
+     myLineChart.data.labels[9] = "october";
+     myLineChart.data.labels[10] = "november";
+  myLineChart.update();
+}
+
+
+var option = {
+	showLines: true
+};
+var myLineChart = Chart.Line(canvas,{
+	data:data,
+  options:option
+});
+</script>
+<script>
+var canvas1 = document.getElementById('myChart2');
+var data1 = {
+    labels: ["cars", "bikes", "buses", "truck", "Railway"],
+    datasets: [
+        {
+            label: "2018",
+            backgroundColor:["#f1c40f","#e67e22","#16a085","#2980b9","2938a6"],
+            borderColor:["#CDA776","#989898","#CB252B","#E39371","#1D7A46"],
+            data: [40,30,15,10,5],
+            borderWidth:[1,1,1,1,1]
+        }
+    ]
+};
+    
+var myPieChart = new Chart(canvas1,{
+    type: "pie",
+    data: data1,
+    options: {}
+});
+function adddatapie1()
+    {
+        
+        myPieChart.data.datasets[0].data[0]=34;
+        myPieChart.data.datasets[0].data[0]=14;
+        myPieChart.data.datasets[0].data[0]=24;
+        myPieChart.data.datasets[0].data[0]=64;
+        myPieChart.data.datasets[0].data[0]=14;
+        
+        myPieChart.update();
+        myPieChart2.data.datasets[0].data[0]=14;
+        myPieChart2.data.datasets[0].data[0]=34;
+        myPieChart2.data.datasets[0].data[0]=54;
+        myPieChart2.data.datasets[0].data[0]=24;
+        myPieChart2.data.datasets[0].data[0]=34;
+        
+        myPieChart2.update();
+        
+    }
+
+
+</script>
+<script>
+var canvas3 = document.getElementById('myChart3');
+var data2 = {
+    labels: ["cars", "bikes", "buses", "truck", "Railway"],
+    datasets: [
+        {
+            label: "2018",
+            backgroundColor:["#f1c40f","#e67e22","#16a085","#2980b9","2938a6"],
+            borderColor:["#CDA776","#989898","#CB252B","#E39371","#1D7A46"],
+            data: [50,60,25,20,5],
+            borderWidth:[1,1,1,1,1]
+        }
+    ]
+};
+var myPieChart2 = new Chart(canvas3,{
+    type: "pie",
+    data: data2,
+    options: {}
+});
+
+    function adddatapie()
+    {
+        
+        myPieChart.data.datasets[0].data[0]=14;
+        myPieChart.data.datasets[0].data[0]=34;
+        myPieChart.data.datasets[0].data[0]=54;
+        myPieChart.data.datasets[0].data[0]=24;
+        myPieChart.data.datasets[0].data[0]=34;
+        
+        myPieChart.update();
+        
+        myPieChart2.data.datasets[0].data[0]=34;
+        myPieChart2.data.datasets[0].data[0]=14;
+        myPieChart2.data.datasets[0].data[0]=24;
+        myPieChart2.data.datasets[0].data[0]=64;
+        myPieChart2.data.datasets[0].data[0]=14;
+        
+        myPieChart2.update();
+        
+ 
+        
+        
+    }
+    
+
+</script>
+
+    <script src="./hero.js"></script>
+</body>
+
+</html>
